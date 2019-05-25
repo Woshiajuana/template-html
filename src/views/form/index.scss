@@ -1,0 +1,272 @@
+@import "../../assets/scss/common";
+
+body{
+    background-color: #F8F8F8;
+    color: #1C1717;
+}
+input:disabled,
+input[disabled]{
+    background-color: transparent;
+}
+input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.prompt{
+    @extend %df;
+    @extend %aic;
+    height: j(40);
+    background-color: #F8E6D0;
+    color: #FB871B;
+    font-size: j(12);
+    padding-left: j(18);
+}
+
+.tab{
+    @extend %df;
+    @extend %aic;
+    @extend %w100;
+    height: j(40);
+}
+
+.tab-item{
+    @extend %h100;
+    @extend %df;
+    @extend %df1;
+    @extend %cp;
+    @extend %aic;
+    @extend %jcc;
+    font-size: j(14);
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    &.active{
+        border-bottom: 1px solid #ff341b;
+    }
+}
+
+.container{
+    border-top: 1px solid #ddd;
+    margin-top: j(10);
+}
+.form{
+    @extend %dn;
+    &.active{
+        @extend %db;
+    }
+}
+
+.form-item{
+    @extend %df;
+    @extend %aic;
+    height: j(50);
+    padding-left: j(18);
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    label{
+        font-size: j(14);
+    }
+    .input{
+        @extend %df1;
+    }
+    input{
+        @extend %tar;
+        @extend %w100;
+        @extend %bsb;
+        border: none;
+        font-size: j(14);
+        padding-right: j(18);
+    }
+}
+.form-item-arrow{
+    input{
+        padding-right: 0;
+    }
+    .select-arrow{
+        @extend %db;
+    }
+    .select{
+
+    }
+}
+.select-arrow{
+    @extend %dn;
+    @extend %pr;
+    @extend %h100;
+    width: j(50);
+    &:after{
+        content: '';
+        @extend %pa;
+        @extend %t50;
+        @extend %l50;
+        margin-left: j(-5);
+        margin-top: j(-5);
+        width: 0;
+        height: 0;
+        border-width: j(5);
+        border-style: solid;
+        border-color: #FFCCCC transparent transparent transparent;
+    }
+    select{
+        z-index: 1;
+        @extend %pa;
+        @extend %dn;
+        @extend %t0;
+        @extend %l0;
+        @extend %r0;
+        @extend %b0;
+        @extend %w100;
+        color: transparent;
+        background-color: transparent;
+        border: none;
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+    }
+}
+.margin{
+    margin-top: j(20);
+    border-top: 1px solid #eee;
+}
+
+.plan{
+    padding-bottom: j(60);
+    background-color: #fff;
+    h2{
+        @extend %fwn;
+        padding: j(11) j(18) 0;
+        font-size: j(14);
+    }
+    ul{
+
+    }
+    li{
+        @extend %df;
+        @extend %aic;
+        border-bottom: 1px solid #eee;
+        height: j(45);
+    }
+    span{
+        @extend %df1;
+        @extend %tac;
+        font-size: j(12);
+    }
+}
+
+.button-group{
+    @extend %pf;
+    @extend %b0;
+    @extend %w100;
+    @extend %l0;
+    @extend %r0;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    height: j(50);
+    font-size: j(16);
+    a{
+        @extend %df;
+        @extend %aic;
+        @extend %jcc;
+        @extend %h100;
+        @extend %cfff;
+        width: j(200);
+        background-color: #999;
+    }
+}
+
+.button{
+    @extend %cp;
+    @extend %b0;
+    @extend %w100;
+    @extend %l0;
+    @extend %r0;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    height: j(50);
+    font-size: j(16);
+    background-color: #FF5454;
+}
+
+.popup-address{
+    z-index: 9;
+    @extend %pf;
+    @extend %df;
+    @extend %w100;
+    @extend %t0;
+    @extend %r0;
+    @extend %l0;
+    @extend %b0;
+    background-color: rgba(0,0,0,.3);
+    &.hidden{
+        @extend %dn;
+    }
+}
+.popup-address-inner{
+    @extend %pf;
+    @extend %fdc;
+    @extend %df;
+    @extend %w100;
+    @extend %l0;
+    @extend %b0;
+    @extend %r0;
+    background-color: #fff;
+    height: j(360);
+}
+.popup-address-header{
+    @extend %df;
+    @extend %pr;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    height: j(44);
+    font-size: j(15);
+    color: #333;
+    border-bottom: 1px solid #eee;
+    i{
+        @extend %pa;
+        @extend %l0;
+        @extend %cp;
+        @extend %t0;
+        @extend %h100;
+        width: j(45);
+        background: url("../../assets/images/css/close.png") center no-repeat;
+        background-size: 60%;
+    }
+}
+.popup-address-tab{
+    @extend %df;
+    @extend %bsb;
+    height: j(45);
+}
+.popup-address-tab-item{
+    @extend %df;
+    @extend %cp;
+    @extend %df1;
+    @extend %aic;
+    @extend %jcc;
+    @extend %h100;
+    font-size: j(14);
+    color: #333;
+    border-bottom: 1px solid #eee;
+    &.active{
+        border-bottom: 1px solid #ff341b;
+    }
+}
+.popup-address-content{
+    @extend %df1;
+    overflow-y: auto;
+}
+.popup-address-content-item{
+    @extend %cp;
+    @extend %df;
+    @extend %bsb;
+    @extend %aic;
+    padding: 0 j(16);
+    height: j(45);
+    font-size: j(13);
+    color: #333;
+    border-bottom: 1px solid #eee;
+}

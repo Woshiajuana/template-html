@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--设置字符编码-->
+    <meta charset="UTF-8">
+    <!--手机开发屏幕自适应-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!--设置标题-->
+    <title>收银金额</title>
+    <!--引入ico-->
+    <!--<link rel="shortcut icon" href="static/favicon.ico?v=2">-->
+    <script src="assets/lib/flexible.js"></script>
+</head>
+<body>
+    <div class="collect-wrap">
+        <div class="input-box" id="keyboard-value" data-value="">￥0</div>
+    </div>
+
+    <div class="keyboard" id="keyboard">
+        <div class="keyboard-item btn" data-value="1">1</div>
+        <div class="keyboard-item btn" data-value="2">2</div>
+        <div class="keyboard-item btn" data-value="3">3</div>
+        <div class="keyboard-item btn delete" data-value="-"></div>
+
+        <div class="keyboard-item btn" data-value="4">4</div>
+        <div class="keyboard-item btn" data-value="5">5</div>
+        <div class="keyboard-item btn" data-value="6">6</div>
+        <div class="keyboard-item"></div>
+
+        <div class="keyboard-item btn" data-value="7">7</div>
+        <div class="keyboard-item btn" data-value="8">8</div>
+        <div class="keyboard-item btn" data-value="9">9</div>
+        <div class="keyboard-item"></div>
+
+        <div class="keyboard-item btn" data-value="C">C</div>
+        <div class="keyboard-item btn" data-value="0">0</div>
+        <div class="keyboard-item btn" data-value=".">.</div>
+        <div class="keyboard-item"></div>
+        <div class="keyboard-sure btn disabled" id="button">
+            <span>确认</span>
+            <span>支付</span>
+        </div>
+    </div>
+
+    <script src="assets/lib/zepto.min.js"></script>
+
+</body>
+</html>
+

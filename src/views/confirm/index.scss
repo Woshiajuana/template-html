@@ -1,0 +1,143 @@
+@import "../../assets/scss/common";
+
+body{
+    background-color: #F8F8F8;
+}
+
+.null{
+    height: j(30);
+}
+
+.card{
+    margin: 0 j(18);
+    background-color: #D9454D;
+    height: j(120);
+    color: #fff;
+    border-radius: j(4);
+    .card-item{
+        @extend  %df;
+        @extend  %jcs;
+        padding: j(20) j(20) 0;
+        font-size: j(14);
+        line-height: j(20);
+    }
+    .card-item-right{
+        padding: j(20) j(20) 0;
+        font-size: j(19);
+    }
+    p{
+        @extend %tar;
+    }
+}
+
+.to-card{
+    background-color: #4A7CEC;
+}
+
+.deposit{
+    padding: j(10) 0;
+    .img{
+        @extend %df;
+        @extend %aic;
+        @extend %jcc;
+    }
+    p{
+        font-size: j(12);
+        color: #999999;
+    }
+}
+
+.form{
+    background-color: #F8F8F8;
+    padding: j(20) j(18) 0;
+
+    .form-item{
+        @extend %df;
+        @extend %aic;
+        height: j(50);
+        padding-left: j(40);
+        background-color: #fff;
+    }
+
+    label{
+        font-size: j(14);
+        color: #1C1717;
+    }
+
+    .input{
+        @extend %df1;
+    }
+
+    .input-code{
+        @extend %df;
+    }
+    input{
+        //@extend %tac;
+        @extend %w100;
+        @extend %bsb;
+        border: none;
+        font-size: j(12);
+        padding-right: j(11);
+        padding-left: j(44);
+    }
+
+    .button-code{
+        @extend %df;
+        color: #F4552B;
+        font-size: j(12);
+    }
+
+}
+
+.button{
+    @extend %pf;
+    @extend %cp;
+    @extend %b0;
+    @extend %w100;
+    @extend %l0;
+    @extend %r0;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    height: j(50);
+    font-size: j(16);
+    background-color: #FF5454;
+}
+
+//.button{
+//    @extend %df;
+//    @extend %aic;
+//    @extend %cp;
+//    @extend %jcc;
+//    @extend %b0;
+//    border-radius: j(4);
+//    height: j(50);
+//    font-size: j(16);
+//    background-color: #FF5454;
+//    color: #fff;
+//    margin: j(18);
+//}
+.plan{
+    margin-top: j(20);
+    background-color: #fff;
+    h2{
+        @extend %fwn;
+        padding: j(11) j(18) 0;
+        font-size: j(14);
+    }
+    ul{
+
+    }
+    li{
+        @extend %df;
+        @extend %aic;
+        border-bottom: 1px solid #eee;
+        height: j(45);
+    }
+    span{
+        @extend %df1;
+        @extend %tac;
+        font-size: j(12);
+    }
+}

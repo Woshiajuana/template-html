@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--设置字符编码-->
+    <meta charset="UTF-8">
+    <!--手机开发屏幕自适应-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!--设置标题-->
+    <title>填写信息</title>
+    <!--引入ico-->
+    <!--<link rel="shortcut icon" href="static/favicon.ico?v=2">-->
+    <script src="assets/lib/flexible.js"></script>
+</head>
+<body>
+    <!--<div class="header">-->
+        <!--<i id="return-btn"></i>-->
+        <!--<h1>选择银行卡</h1>-->
+    <!--</div>-->
+
+    <!--<div class="prompt">-->
+        <!--<span>请绑定消费的信用卡和收银的储蓄卡</span>-->
+    <!--</div>-->
+
+    <div class="tab">
+        <div class="tab-item active" data-value="0">绑定储蓄卡</div>
+        <div class="tab-item" data-value="1">绑定信用卡</div>
+    </div>
+
+    <div class="container">
+        <div class="form active"></div>
+        <div class="form"></div>
+    </div>
+
+    <!--<div class="plan margin">-->
+        <!--<h2>收银计划</h2>-->
+        <!--<ul>-->
+            <!--<li>-->
+                <!--<span>顺序</span>-->
+                <!--<span>时间</span>-->
+                <!--<span>类型</span>-->
+                <!--<span>金额</span>-->
+                <!--<span>手续费</span>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<span>1</span>-->
+                <!--<span>即时</span>-->
+                <!--<span>信用卡交易</span>-->
+                <!--<span>-10000</span>-->
+                <!--<span>65</span>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<span>2</span>-->
+                <!--<span>1-30分钟</span>-->
+                <!--<span>转账储蓄卡</span>-->
+                <!--<span>+9932</span>-->
+                <!--<span>3</span>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <div class="button-group">
+        <a href="./details.html"><span>查看订单</span></a>
+        <div class="button" id="button">
+            <span>确定收银</span>
+        </div>
+    </div>
+
+    <div class="popup-address hidden" id="popup-address">
+        <div class="popup-address-inner">
+            <div class="popup-address-header">
+                <i id="close"></i>
+                <span>请选择地址</span>
+            </div>
+            <div class="popup-address-tab">
+                <div class="popup-address-tab-item active">省份</div>
+                <div class="popup-address-tab-item">城市</div>
+                <div class="popup-address-tab-item">区县</div>
+            </div>
+            <ul class="popup-address-content" id="popup-address-content">
+                <li class="popup-address-content-item"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="assets/lib/zepto.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/eruda"></script>-->
+    <!--<script>eruda.init();</script>-->
+</body>
+</html>
+

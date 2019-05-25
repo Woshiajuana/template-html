@@ -13,12 +13,9 @@ project
 ├── build                                   // 打包脚本目录
 |   ├── webpack.config.js                   // 打包脚本
 ├── cmd                                     // node命令目录
-|   ├── app.cmd.js
 |   ├── cmd.js
 |   ├── index.js
-|   ├── ip.cmd.js
 |   ├── release.cmd.js
-|   ├── tree.cmd.js
 ├── dist                                    // 打包出来的js目录（用户部署生产）
 |   ├── assets                              // 静态文件目录
 │   |   └── css                             // 样式资源
@@ -44,11 +41,11 @@ project
 
 > npm run serve => 启动一个本地服务
 
-> npm run dev   => 本地打包JS
+> npm run dev   => 本地打包
 
-> npm run test  => 测试打包JS
+> npm run test  => 测试打包
 
-> npm run build => 生产打包JS
+> npm run build => 生产打包
 
 > node cmd -r           [string]    =>  设置发布的环境
 > node cmd --release    [string]    =>  设置发布的环境

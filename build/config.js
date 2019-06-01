@@ -7,7 +7,7 @@ module.exports = {
 
     // 输出文件目录
     output: {
-        filename: 'assets/js/[name].[chunkhash].js',
+        filename: 'assets/js/[name].[hash].js',
         // filename: 'assets/js/[name].js',
         path: path.join(__dirname, '../dist')
     },

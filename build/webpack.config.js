@@ -100,6 +100,7 @@ let webpackConfig = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 unused: true,
@@ -110,6 +111,18 @@ let webpackConfig = {
         }),
         new ExtractTextPlugin(extractTextPlugin),
     ],
+    devServer: {
+        port: 8050,
+        host: 'localhost',
+        inline: true,
+        hot: true,
+        open: true,
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, '../dist'),
+        publicPath: '/',
+        proxy: {
+        }
+    }
 };
 for (let key in entry) {
     const htmlPlugin = new HtmlWebpackPlugin({

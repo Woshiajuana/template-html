@@ -1,6 +1,6 @@
 
 import Toast                        from 'utils/toast.util'
-import ParamsUtil                   from 'utils/params.util'
+import Router                       from 'utils/router.util'
 import Store                        from 'utils/store.util'
 
 // 控制器

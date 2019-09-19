@@ -7,7 +7,7 @@ module.exports = function (content) {
         html,
         css,
     } = options;
-    let type = this.resource.indexOf('html') > 0;
+    let type = this.resource.replace(/\\/g, '/').indexOf('/html/') > 0;
     urlLoader.publicPath = type ? html.publicPath : css.publicPath;
     return content;
 };

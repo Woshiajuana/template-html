@@ -9,10 +9,9 @@ $.fn.lazyload = function () {
             clientH = document.documentElement.clientHeight || document.body.clientHeight;
         elements.each(function (index, item) {
             item = $(item);
-            if((top + clientH) >= item.offset().top){
-                if(item.type) return;
-                item.type = true;
-                item.prop('src', item.data('src'));
+            let src = item.data('src');
+            if((top + clientH) >= item.offset().top && src){
+                item.prop('src', item.data('src')).removeAttr('data-src');
             }
         });
     }

@@ -4,7 +4,7 @@ export default {
     filterMoney: s => {
         let money = parseFloat(s);
         if (money) {
-            s = (money).toFixed(2) + "";
+            s = (money / 100).toFixed(2) + "";
             let l = s.split(".")[0].split("").reverse();
             let r = s.split(".")[1];
             let t = "";
@@ -18,13 +18,6 @@ export default {
         } else {
             return '---';
         }
-    },
-
-    filterBankCard (value) {
-        if (!value) return '';
-        let len = value.length;
-        value = `${new Array(len - 3).join('*')}${value.substring(len - 4)}`;
-        return value.replace(/(.{4})/g, '$1 ');
     },
 
     filterPhone (value) {

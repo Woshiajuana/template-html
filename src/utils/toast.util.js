@@ -19,6 +19,7 @@ export default {
         let content = options.content || options || '';
         let cancelText = options.cancelText || '取消';
         let sureText = options.sureText || '确认';
+        let type = options.type || 'confirm';
         let addEvent = () => {
             $('#pop-confirm').on('click', '.pop-confirm-btn', handle);
         };
@@ -36,7 +37,7 @@ export default {
                 <div class="pop-confirm-inner">
                     <div class="pop-confirm-con">${content}</div>
                     <div class="pop-confirm-operate">
-                        <div class="pop-confirm-cancel pop-confirm-btn">${cancelText}</div>
+                        <div class="pop-confirm-cancel pop-confirm-btn ${type !== 'confirm' && 'hidden'}">${cancelText}</div>
                         <div class="pop-confirm-sure pop-confirm-btn">${sureText}</div>
                     </div>
                 </div>

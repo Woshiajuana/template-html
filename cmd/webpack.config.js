@@ -31,9 +31,6 @@ const { entry, expand } = ((dirPath, cut = '') => {
     return { entry, expand };
 }) (path.join(__dirname, '../src/views'), 'views');
 
-console.log('entry => ', entry);
-console.log('expand => ', expand);
-
 // urlLoader配置
 const urlLoader = {
     limit: '1024',
@@ -141,16 +138,17 @@ let webpackConfig = {
                         publicPath:''
                     },
                 }],
-            }, 
+            },
             {
                 // 文件依赖配置项——视频
-                test: /\.(ogg|mpeg4|webm)?$/,
+                test: /\.(ogg|mpeg4|webm|mp4)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
                         limit: 8192,
                         name: 'videos/[name].[ext]?[hash:8]',
-                        publicPath:''
+                        outputPath: 'assets/',
+                        publicPath: '',
                     },
                 }],
             },

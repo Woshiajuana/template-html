@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node cmd -d dist&&node cmd -c src/assets/images/html:dist/assets/images&&node cmd -c src/assets/lib:dist/assets/lib&&node cmd -r BD&&webpack-dev-server --config ./cmd/webpack.config.js",
-    "dev1": "node cmd -d dist&&webpack --watch --config ./cmd/webpack.config.js",
-    "dev": "node cmd -d dist&&node cmd -c src/assets/lib:dist/assets/lib&&webpack --watch --config ./cmd/webpack.config.js",
-    "dev2": "node cmd -d dist&&node cmd -c src/assets/images/html:dist/assets/images&&node cmd -c src/assets/lib:dist/assets/lib&&webpack --watch --config ./cmd/webpack.config.js",
+
+      "dev1": "node cmd -d dist&&webpack --watch --config ./cmd/webpack.config.js",
+
+      "dev": "node cmd -d dist&&node cmd -c src/assets/lib:dist/assets/lib&&webpack --watch --config ./cmd/webpack.config.js",
+      "dev2": "node cmd -d dist&&node cmd -c src/assets/images/html:dist/assets/images&&node cmd -c src/assets/lib:dist/assets/lib&&webpack --watch --config ./cmd/webpack.config.js",
     "test": "node cmd -d dist&&node cmd -c src/assets/images/html:dist/assets/images&&node cmd -c src/assets/lib:dist/assets/lib&&webpack --config ./cmd/webpack.config.js",
     "build": "node cmd -d dist&&node cmd -c src/assets/images/html:dist/assets/images&&node cmd -c src/assets/lib:dist/assets/lib&&webpack --config ./cmd/webpack.config.js",
     "clear": "node cmd -d dist",

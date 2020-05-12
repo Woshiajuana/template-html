@@ -38,8 +38,8 @@ let webpackConfig = {
     entry,
     // 输出文件目录
     output: {
-        filename: 'assets/js/[name].[hash].js',
-        // filename: 'assets/js/[name].js',
+        // filename: 'assets/js/[name].[hash].js',
+        filename: 'assets/js/[name].js',
         path: path.join(__dirname, '../dist')
     },
     // 替换路径配置
@@ -122,7 +122,8 @@ let webpackConfig = {
             }
         }),
         new ExtractTextPlugin({
-            filename: 'assets/css/[name].[chunkhash].css',
+            filename: 'assets/css/[name].css',
+            // filename: 'assets/css/[name].[chunkhash].css',
         }),
     ],
 };

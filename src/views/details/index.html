@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--设置字符编码-->
-    <meta charset="UTF-8">
-    <!--手机开发屏幕自适应-->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <!--设置标题-->
-    <title>TEMPLATE-HTML</title>
-    <!--引入ico-->
-    <!--<link rel="shortcut icon" href="static/favicon.ico?v=2">-->
-    <script src="assets/lib/flexible.js"></script>
+    <title>${htmlWebpackPlugin.options.title}</title>
+    ${require('html-loader!src/components/head-section/index.html')}
 </head>
 <body>
+    <div id="app">
 
-    <h1>TEMPLATE-DETAILS</h1>
+        ${require('html-loader!src/components/header-section/index.html')}
 
-    <script src="assets/lib/zepto.min.js"></script>
+
+        <p>-----------{{strBodyPrompt}}-----------</p>
+
+        <img :src="logo">
+        <img src="${require('src/assets/images/html/index.png')}">
+
+        <h1>TEMPLATE-HTML-DETAILS</h1>
+
+        <p>-----------我是主体噢-----------</p>
+
+
+        ${require('html-loader!src/components/footer-section/index.html')}
+
+    </div>
 
 </body>
 </html>

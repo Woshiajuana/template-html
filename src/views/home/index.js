@@ -4,8 +4,7 @@ import './index.scss'
 import FooterMixin from 'src/components/footer-section'
 import HeaderMixin from 'src/components/header-section'
 
-const app = new Vue ({
-    title111: 'xxx',
+new Vue ({
     el: '#app',
     mixins: [
         FooterMixin,
@@ -13,17 +12,8 @@ const app = new Vue ({
     ],
     data () {
         return {
-            title: '1',
-            header: 'xxx',
+            strBodyPrompt: '我是主体噢',
             logo: require('src/assets/images/html/index.png'),
         }
     }
 });
-
-app.titleName = 'xxx'
-
-console.log(app)
-
-// module.exports.expand = {
-//     title: '哈哈哈',
-// };

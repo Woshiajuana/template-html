@@ -95,7 +95,7 @@ let webpackConfig = {
                 loaders: ['babel-loader'],
                 exclude: /node_modules/,
             },
-            // 处理url文件
+            // 处理图片
             {
                 test: /\.(png|jpeg|jpg|gif|svg)$/,
                 exclude: /node_modules/,
@@ -117,6 +117,42 @@ let webpackConfig = {
                         }
                     },
                 ],
+            },
+            {
+                // 文件依赖配置项——字体图标
+                test: /\.(woff|woff2|svg|eot|ttf)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8192,
+                        name: 'fonts/[name].[ext]?[hash:8]',
+                        publicPath:''
+                    },
+                }],
+            },
+            {
+                // 文件依赖配置项——音频
+                test: /\.(wav|mp3|ogg)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8192,
+                        name: 'audios/[name].[ext]?[hash:8]',
+                        publicPath:''
+                    },
+                }],
+            }, 
+            {
+                // 文件依赖配置项——视频
+                test: /\.(ogg|mpeg4|webm)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8192,
+                        name: 'videos/[name].[ext]?[hash:8]',
+                        publicPath:''
+                    },
+                }],
             },
         ]
     },

@@ -143,8 +143,9 @@ for (let key in entry) {
         filename: `${key}.html`,
         template: entry[key].replace('index.js', 'index.html'),
         minify: {
-            removeAttributeQuotes: false,
+            removeAttributeQuotes: false, // 移除属性的引号
             removeComments: true, // 移除注释
+            collapseWhitespace:true, // 折叠空白区域
         },
         chunks: [key],
         inject: true,

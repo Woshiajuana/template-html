@@ -1,21 +1,31 @@
 
-
-const config = require('./config');
-const walk = require('./walk.util');
+const fs = require('fs');
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let {
-    entryDirName,
-    output,
-    resolve,
-    extractTextPlugin,
-} = config;
-
 // 遍历目录结构
-const entry = walk.run(entryDirName, 'views');
-
+const entry = ((dirPath, cut = '') => {
+    let result = {};
+    let loop;
+    (loop = (dir) => {
+        fs.readdirSync(dir).forEach((file) => {
+            let filePath = path.join(dir, '/' + file);
+            let fileStat = fs.statSync(filePath);
+            if (fileStat.isFile() && file === 'index.js') {
+                let fileDirArr = filePath.substring(filePath.indexOf(cut) + cut.length + 1).replace(/\\/g, '/').split('\/');
+                fileDirArr = unique(fileDirArr);
+                let key = fileDirArr.join('_');
+                result[key] = filePath;
+            } else if (fileStat.isDirectory()) {
+                loop(filePath);
+            }
+        });
+    })(dirPath);
+    return result;
+}) (path.join(__dirname, '../src/views'), 'views');
+// urlLoader配置
 const urlLoader = {
     limit: '1024',
     outputPath: 'assets/',
@@ -24,9 +34,21 @@ const urlLoader = {
 };
 
 let webpackConfig = {
+    // 入口文件
     entry,
-    output,
-    resolve,
+    // 输出文件目录
+    output: {
+        filename: 'assets/js/[name].[hash].js',
+        // filename: 'assets/js/[name].js',
+        path: path.join(__dirname, '../dist')
+    },
+    // 替换路径配置
+    resolve: {
+        alias: {
+            'src': path.resolve(__dirname, '../src/'),
+        }
+    },
+    // 模块
     module: {
         rules: [
             // 处理 html 文件
@@ -89,6 +111,7 @@ let webpackConfig = {
             },
         ]
     },
+    // 插件
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -98,19 +121,23 @@ let webpackConfig = {
                 screw_ie8: true,
             }
         }),
-        new ExtractTextPlugin(extractTextPlugin),
+        new ExtractTextPlugin({
+            filename: 'assets/css/[name].[chunkhash].css',
+        }),
     ],
 };
+
 for (let key in entry) {
     const htmlPlugin = new HtmlWebpackPlugin({
         filename: `${key}.html`,
         template: entry[key].replace('index.js', 'index.html'),
-        minify: { removeAttributeQuotes: false },
+        minify: {
+            removeAttributeQuotes: false,
+        },
         chunks: [key],
         inject: 'body',
     });
     webpackConfig.plugins.push(htmlPlugin);
 }
-
 
 module.exports = webpackConfig;

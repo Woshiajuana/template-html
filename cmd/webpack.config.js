@@ -125,9 +125,6 @@ let webpackConfig = {
             filename: 'assets/css/[name].css',
             // filename: 'assets/css/[name].[chunkhash].css',
         }),
-
-        // new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('login', '登录页')),
     ],
 };
 

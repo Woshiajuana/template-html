@@ -11,7 +11,7 @@ module.exports = {
             fs.readdirSync(dir).forEach((file) => {
                 let filePath = path.join(dir, '/' + file);
                 let fileStat = fs.statSync(filePath);
-                if (fileStat.isFile() && file === 'entry.js') {
+                if (fileStat.isFile() && file === 'index.js') {
                     let fileDirArr = filePath.substring(filePath.indexOf(cut) + cut.length + 1).replace(/\\/g, '/').split('\/');
                     fileDirArr = unique(fileDirArr);
                     let key = fileDirArr.join('_');
@@ -27,7 +27,7 @@ module.exports = {
 function unique(array){
     let n = [];
     for(let i = 0; i < array.length; i++){
-        if (n.indexOf(array[i]) === -1 && array[i] !== 'entry.js') n.push(array[i]);
+        if (n.indexOf(array[i]) === -1 && array[i] !== 'index.js') n.push(array[i]);
     }
     return n;
 }

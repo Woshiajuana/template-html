@@ -1,7 +1,5 @@
 
 
-const path = require('path');
-const fs = require('fs');
 const config = require('./config');
 const walk = require('./walk.util');
 const webpack = require('webpack');
@@ -12,7 +10,6 @@ let {
     entryDirName,
     output,
     resolve,
-    htmlWebpackPluginOptions,
     extractTextPlugin,
 } = config;
 
@@ -41,7 +38,6 @@ let webpackConfig = {
             // 处理 css 文件
             {
                 test: /\.css$/,
-                // exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: 'css-loader'
@@ -60,8 +56,6 @@ let webpackConfig = {
                     }, {
                         loader: "sass-loader"
                     }],
-                    //   在开发环境使用 style-loader
-                    // fallback: "style-loader"
                 })
             },
             // 处理 js 文件
@@ -69,10 +63,6 @@ let webpackConfig = {
                 test: /\.js(\?[^?]+)?$/,
                 loaders: ['babel-loader'],
                 exclude: /node_modules/,
-                // include: [
-                //     path.resolve(__dirname, '../node_modules/swiper'),
-                //     path.resolve(__dirname, '../src'),
-                // ],
             },
             // 处理url文件
             {
@@ -100,7 +90,6 @@ let webpackConfig = {
         ]
     },
     plugins: [
-        // new webpack.HotModuleReplacementPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 unused: true,
@@ -111,23 +100,11 @@ let webpackConfig = {
         }),
         new ExtractTextPlugin(extractTextPlugin),
     ],
-    // devServer: {
-    //     port: 8050,
-    //     host: 'localhost',
-    //     inline: true,
-    //     hot: true,
-    //     open: true,
-    //     historyApiFallback: true,
-    //     contentBase: path.resolve(__dirname, '../dist'),
-    //     publicPath: '/',
-    //     proxy: {
-    //     }
-    // }
 };
 for (let key in entry) {
     const htmlPlugin = new HtmlWebpackPlugin({
         filename: `${key}.html`,
-        template: entry[key].replace('entry.js', 'index.html'),
+        template: entry[key].replace('index.js', 'index.html'),
         minify: { removeAttributeQuotes: false },
         chunks: [key],
         inject: 'body',

@@ -96,7 +96,7 @@ let webpackConfig = {
                         options: urlLoader,
                     },
                     {
-                        loader: './build/assist.url.loader.js',
+                        loader: './cmd/assist.url.loader.js',
                         options: {
                             urlLoader,
                             html: {

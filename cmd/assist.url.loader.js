@@ -7,8 +7,8 @@ module.exports = function (content) {
         html,
         css,
     } = options;
-    let type = this.resource.replace(/\\/g, '/').indexOf('/html/') > 0;
-    urlLoader.publicPath = type ? html.publicPath : css.publicPath;
+    let type = this.resource.replace(/\\/g, '/').indexOf('/css/') > 0;
+    urlLoader.publicPath = type ? css.publicPath : html.publicPath;
     return content;
 };
 module.exports.raw = true;

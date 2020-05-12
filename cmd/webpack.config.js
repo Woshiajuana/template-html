@@ -156,6 +156,16 @@ let webpackConfig = {
     },
     // 插件
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "commons",
+            // (the commons chunk name)
+            filename: "assets/js/commons.js",
+            // (the filename of the commons chunk)
+            // minChunks: 3,
+            // (Modules must be shared between 3 entries)
+            // chunks: ["pageA", "pageB"],
+            // (Only use these entries)
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 unused: true,
@@ -165,7 +175,11 @@ let webpackConfig = {
             }
         }),
         new ExtractTextPlugin({
+            // name: "commons",
             filename: 'assets/css/[name].css',
+            // chunkFilename: "[id].css"
+            // allChunks: true,
+            // chunks: ["pageA", "pageB"],
             // filename: 'assets/css/[name].[chunkhash].css',
         }),
     ],
@@ -181,7 +195,7 @@ for (let key in entry) {
             removeComments: true, // 移除注释
             collapseWhitespace:true, // 折叠空白区域
         },
-        chunks: [key],
+        chunks: ['commons', key],
         inject: true,
     });
     webpackConfig.plugins.push(htmlPlugin);

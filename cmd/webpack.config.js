@@ -52,11 +52,11 @@ let webpackConfig = {
     module: {
         rules: [
             // 处理 html 文件
-            {
-                test: /\.html$/,
-                loader: 'html-loader',
-                exclude: /node_modules/,
-            },
+            // {
+            //     test: /\.html$/,
+            //     loader: 'html-loader',
+            //     exclude: /node_modules/,
+            // },
             // 处理 css 文件
             {
                 test: /\.css$/,
@@ -125,6 +125,9 @@ let webpackConfig = {
             filename: 'assets/css/[name].css',
             // filename: 'assets/css/[name].[chunkhash].css',
         }),
+
+        // new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        // new HtmlWebpackPlugin(getHtmlConfig('login', '登录页')),
     ],
 };
 
@@ -136,7 +139,7 @@ for (let key in entry) {
             removeAttributeQuotes: false,
         },
         chunks: [key],
-        inject: 'body',
+        inject: true,
     });
     webpackConfig.plugins.push(htmlPlugin);
 }
@@ -147,7 +150,7 @@ module.exports = webpackConfig;
 function unique(array){
     let n = [];
     for(let i = 0; i < array.length; i++){
-        if (n.indexOf(array[i]) === -1 && array[i] !== 'entry.js') n.push(array[i]);
+        if (n.indexOf(array[i]) === -1 && array[i] !== 'index.js') n.push(array[i]);
     }
     return n;
 }

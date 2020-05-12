@@ -6,8 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // 遍历目录结构
-const entry = ((dirPath, cut = '') => {
-    let result = {};
+const { entry, expand } = ((dirPath, cut = '') => {
+    let entry = {}, expand = {};
     let loop;
     (loop = (dir) => {
         fs.readdirSync(dir).forEach((file) => {
@@ -17,14 +17,23 @@ const entry = ((dirPath, cut = '') => {
                 let fileDirArr = filePath.substring(filePath.indexOf(cut) + cut.length + 1).replace(/\\/g, '/').split('\/');
                 fileDirArr = unique(fileDirArr);
                 let key = fileDirArr.join('_');
-                result[key] = filePath;
+                entry[key] = filePath;
+                try {
+                    expand[key] = require(filePath.replace('index.js', 'expand.js'));
+                } catch (e) {
+                    expand[key] = {};
+                }
             } else if (fileStat.isDirectory()) {
                 loop(filePath);
             }
         });
     })(dirPath);
-    return result;
+    return { entry, expand };
 }) (path.join(__dirname, '../src/views'), 'views');
+
+console.log('entry => ', entry);
+console.log('expand => ', expand);
+
 // urlLoader配置
 const urlLoader = {
     limit: '1024',
@@ -130,6 +139,7 @@ let webpackConfig = {
 
 for (let key in entry) {
     const htmlPlugin = new HtmlWebpackPlugin({
+        ...expand[key],
         filename: `${key}.html`,
         template: entry[key].replace('index.js', 'index.html'),
         minify: {

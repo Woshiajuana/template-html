@@ -24,4 +24,6 @@ app.titleName = 'xxx'
 
 console.log(app)
 
-module.exports.title = '哈哈哈';
+// module.exports.expand = {
+//     title: '哈哈哈',
+// };

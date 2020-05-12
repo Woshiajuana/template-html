@@ -141,3 +141,13 @@ for (let key in entry) {
 }
 
 module.exports = webpackConfig;
+
+
+function unique(array){
+    let n = [];
+    for(let i = 0; i < array.length; i++){
+        if (n.indexOf(array[i]) === -1 && array[i] !== 'entry.js') n.push(array[i]);
+    }
+    return n;
+}
+

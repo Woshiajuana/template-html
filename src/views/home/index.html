@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--设置字符编码-->
-    <meta charset="UTF-8">
-    <!--手机开发屏幕自适应-->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <!--设置标题-->
-    <title>TEMPLATE-HTML</title>
-    <!--引入ico-->
-    <!--<link rel="shortcut icon" href="static/favicon.ico?v=2">-->
-    <script src="assets/lib/flexible.js"></script>
-    <script src="assets/lib/vue.min.js"></script>
+    ${require('html-loader!src/components/head-section/index.html')}
 </head>
 <body>
 
     <div id="app">
-        <%= require('html-loader!src/components/header.html')  %>
+
+        ${require('html-loader!src/components/header-section/index.html')}
+
+
+        <p>-----------我是主体噢-----------</p>
 
         <img :src="logo">
 
         <h1>{{title}}TEMPLATE-HOME1222</h1>
-    </div>
 
+        <p>-----------我是主体噢-----------</p>
+
+
+        ${require('html-loader!src/components/footer-section/index.html')}
+
+    </div>
 
     <script src="assets/lib/zepto.min.js"></script>
 

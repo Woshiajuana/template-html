@@ -53,9 +53,9 @@ let webpackConfig = {
         rules: [
             // 处理 html 文件
             // {
-            //     test: /\.html$/,
-            //     loader: 'html-loader',
-            //     exclude: /node_modules/,
+                // test: /\.html$/,
+                // loader: 'html-loader',
+                // exclude: /node_modules/,
             // },
             // 处理 css 文件
             {
@@ -134,6 +134,7 @@ for (let key in entry) {
         template: entry[key].replace('index.js', 'index.html'),
         minify: {
             removeAttributeQuotes: false,
+            removeComments: true, // 移除注释
         },
         chunks: [key],
         inject: true,

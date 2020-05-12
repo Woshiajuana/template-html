@@ -8,7 +8,7 @@ new Vue ({
         return {
             title: '1',
             header: 'xxx',
-            logo: require('src/assets/images/css/loading.gif'),
+            logo: require('src/assets/images/html/index.png'),
         }
     }
 });

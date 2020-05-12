@@ -1,5 +1,5 @@
 {
-  "name": "multi-page",
+  "name": "template-html",
   "version": "1.0.0",
   "description": "webpack building multiple page projects",
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Woshiajuana/multi-page.git"
+    "url": "git+https://github.com/Woshiajuana/template-html.git"
   },
   "keywords": [
     "webpack"
@@ -22,9 +22,9 @@
   "author": "[{name:ajuan,email:zhigang.chen@owulia.com}]",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Woshiajuana/multi-page/issues"
+    "url": "https://github.com/Woshiajuana/template-html/issues"
   },
-  "homepage": "https://github.com/Woshiajuana/multi-page#readme",
+  "homepage": "https://github.com/Woshiajuana/template-html#readme",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",

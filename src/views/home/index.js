@@ -1,9 +1,6 @@
 
 import './index.scss'
 
-
-import 'src/assets/scss/_common.scss'
-
 import FooterMixin from 'src/components/footer-section'
 import HeaderMixin from 'src/components/header-section'
 

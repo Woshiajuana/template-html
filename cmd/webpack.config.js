@@ -178,7 +178,7 @@ let webpackConfig = {
             // name: "commons",
             filename: 'assets/css/[name].css',
             // chunkFilename: "[id].css"
-            // allChunks: true,
+            allChunks: true,
             // chunks: ["pageA", "pageB"],
             // filename: 'assets/css/[name].[chunkhash].css',
         }),

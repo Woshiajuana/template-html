@@ -7,6 +7,10 @@
     @return ($px / $base-font-size) * 1rem;
 }
 
+%br50{
+    border-radius: 50%;
+}
+
 %boxs{
     box-shadow: 0 0 j(5) j(5) rgba(0,0,0,.05);
 }

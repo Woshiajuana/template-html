@@ -10,23 +10,20 @@
 
 ```
 project
-├── build                                   // 打包脚本目录
-|   ├── webpack.config.js                   // 打包脚本
-├── cmd                                     // node命令目录
-|   ├── cmd.js
-|   ├── index.js
-|   ├── release.cmd.js
+├── cmd                                     // 打包脚本目录
+│   ├── webpack.config.js                   // 打包脚本
+│   ├── cmd.js
+│   ├── index.js
 ├── dist                                    // 打包出来的js目录（用户部署生产）
-|   ├── assets                              // 静态文件目录
+│   ├── assets                              // 静态文件目录
 │   |   └── css                             // 样式资源
 │   |   └── js                              // js资源
 │   |   └── image                           // 图片资源
-|   ├── [xx].html                           // 页面
+│   ├── [name].html                         // 页面
 ├── node_modules                            // 依赖
 ├── src                                     // 项目目录
 │   ├── assets                              // 组件目录
-│   ├── config                              // 项目配置目录
-│   ├── utils                               // 工具目录
+│   ├── components                          // 组件目录
 │   ├── views                               // 页面目录
 │   |   └── page
 ├── .babelrc                                // babel 配置文件
@@ -46,9 +43,6 @@ project
 > npm run test  => 测试打包
 
 > npm run build => 生产打包
-
-> node cmd -r           [string]    =>  设置发布的环境
-> node cmd --release    [string]    =>  设置发布的环境
 
 > node cmd -c                       =>  复制lib目录
 > node cmd --copy                   =>  复制lib目录

@@ -117,7 +117,7 @@ let webpackConfig = {
             },
             {
                 // 文件依赖配置项——字体图标
-                test: /\.(woff|woff2|svg|eot|ttf)$/,
+                test: /\.(woff|woff2|eot|ttf)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {

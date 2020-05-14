@@ -44,8 +44,8 @@ let webpackConfig = {
     entry,
     // 输出文件目录
     output: {
-        // filename: 'assets/js/[name].[hash].js',
-        filename: 'assets/js/[name].js',
+        filename: 'assets/js/[name].[hash].js',
+        // filename: 'assets/js/[name].js',
         path: path.join(__dirname, '../dist')
     },
     // 替换路径配置
@@ -159,7 +159,7 @@ let webpackConfig = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
             // (the commons chunk name)
-            filename: "assets/js/commons.js",
+            filename: "assets/js/commons.[hash].js",
             // (the filename of the commons chunk)
             // minChunks: 3,
             // (Modules must be shared between 3 entries)
@@ -176,11 +176,11 @@ let webpackConfig = {
         }),
         new ExtractTextPlugin({
             // name: "commons",
-            filename: 'assets/css/[name].css',
+            filename: 'assets/css/[name].[chunkhash].css',
+            // filename: 'assets/css/[name].css',
             // chunkFilename: "[id].css"
             allChunks: true,
             // chunks: ["pageA", "pageB"],
-            // filename: 'assets/css/[name].[chunkhash].css',
         }),
     ],
 };
